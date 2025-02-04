@@ -1,0 +1,96 @@
+
+:root {
+    --primary: rgb(168, 85, 247);
+    --background: rgb(17, 24, 39);
+    --foreground: rgb(243, 244, 246);
+    --muted: rgb(31, 41, 55);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+.nav-container {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgb(55, 65, 81);
+    z-index: 50;
+}
+
+.nav-content {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 1rem;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 48rem;
+}
+
+.hero-title {
+    font-size: 3.75rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    color: rgb(209, 213, 219);
+    font-size: 1.25rem;
+}
+
+.features-section {
+    padding: 6rem 1rem;
+}
+
+.features-grid {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.feature-card {
+    background-color: var(--muted);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 4rem;
+}

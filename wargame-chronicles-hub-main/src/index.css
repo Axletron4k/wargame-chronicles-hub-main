@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 230 25% 14%;
+  --foreground: 210 40% 98%;
+  --card: 230 25% 14%;
+  --card-foreground: 210 40% 98%;
+  --popover: 230 25% 14%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 255 80% 74%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 255 84% 86%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 255 84% 86%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 255 80% 74%;
+  --radius: 0.5rem;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.timeline-dot::before {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: hsl(var(--primary));
+  border-radius: 9999px;
+  left: -22px;
+  top: 0.25rem;
+}
+
+.timeline-dot::after {
+  content: '';
+  position: absolute;
+  width: 0.125rem;
+  height: 100%;
+  background-color: hsl(var(--primary));
+  left: -14px;
+  top: 1.5rem;
+}
+
+.timeline-dot:last-child::after {
+  display: none;
+}
+
+.nav-container {
+  position: fixed;
+  width: 100%;
+  background-color: hsla(var(--background), 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid hsl(var(--border));
+  z-index: 50;
+}
+
+.nav-content {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  align-items: center;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: hsl(var(--primary));
+}
+
+.nav-links {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+.nav-link {
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: hsl(var(--primary));
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  padding: 1rem;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 48rem;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 3.75rem;
+  }
+}
+
+.hero-subtitle {
+  color: hsl(var(--primary));
+  margin-top: 0.5rem;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: rgb(209, 213, 219);
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .hero-description {
+    font-size: 1.25rem;
+  }
+}
+
+.products-section {
+  background-color: hsl(var(--muted));
+  padding: 6rem 1rem;
+}
+
+.products-grid {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.product-card {
+  background-color: hsl(var(--background));
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-content {
+  padding: 1.5rem;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 1rem;
+}
+
+.product-link {
+  display: inline-flex;
+  align-items: center;
+  color: hsl(var(--primary));
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.product-link:hover {
+  color: hsl(var(--primary), 0.8);
+}
+
+.timeline-section {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 6rem 1rem;
+}
+
+.section-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.timeline-container {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-event {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timeline-year {
+  font-weight: bold;
+  color: hsl(var(--primary));
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-description {
+  color: hsl(var(--muted-foreground));
+}
